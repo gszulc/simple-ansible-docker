@@ -7,9 +7,9 @@
 ## install required packages 
 apt update
 apt install apt-transport-https ca-certificates curl software-properties-common -y
-apt-add-repository ppa:ansible/ansible
+apt-add-repository -y ppa:ansible/ansible
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 apt-update
 apt install ansible docker-ce python-pip -y
 pip install docker
