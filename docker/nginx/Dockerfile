@@ -7,4 +7,12 @@ COPY app /app
 
 COPY djangodb_nginx.conf /etc/nginx/sites-enabled/
 
+# Forward request and error logs to docker log collector
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+	&& ln -sf /dev/stderr /var/log/nginx/error.log
+
+STOPSIGNAL SIGTERM
+
 EXPOSE 80 8000
+
+CMD ["nginx", "-g", "daemon off;"]
