@@ -7,4 +7,4 @@ COPY app /app
 
 COPY djangodb_nginx.conf /etc/nginx/sites-enabled/
 
-EXPOSE 80
+EXPOSE 80 8000
