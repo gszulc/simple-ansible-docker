@@ -1,0 +1,27 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts: localhost
+  gather_facts: no
+  vars:
+    docker_volume: db_data
+    docker_network: db_net
+    db_name: db-mysql
+    nginx_name: nginx
+    nginx_host_port: 8080
+    nginx_container_port: 80
+    default_password: test123
+  tasks:
+    - name: "Create a Volume"
+      docker_volume:
+        name: "{{ docker_volume }}"
+
+    - name: "Create a network"
+      docker_network:
+        name: "{{ docker_network }}"
+
+    - name: "Build custom mysql image"
+      command: docker build -t mysql_db:img1 ../../docker/mysql
+
+    - name: "Run Mysql container"
+      command: docker run -p 3306:3306 --name "{{ db_name }}" -d mysql_db:img1
+      
