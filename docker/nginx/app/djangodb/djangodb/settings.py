@@ -25,7 +25,7 @@ SECRET_KEY = 'wnihe8ik)&=3cv8t&gawh_5xll0ffl$c=e)hv1#6zocu(lx*zm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -74,10 +74,13 @@ WSGI_APPLICATION = 'djangodb.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+  'default': {
+    'ENGINE': 'django.db.backends.mysql', 
+    'NAME': 'employees',
+    'USER': 'root',
+    'PASSWORD': 'simplepassword',
+    'HOST': 'localhost', 
+  }
 }
 
 
@@ -118,3 +121,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
