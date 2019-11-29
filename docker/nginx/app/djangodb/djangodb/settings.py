@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mysqlapp',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,7 @@ DATABASES = {
     'NAME': 'employees',
     'USER': 'root',
     'PASSWORD': 'simplepassword',
-    'HOST': 'localhost', 
+    'HOST': 'db-mysql', 
   }
 }
 

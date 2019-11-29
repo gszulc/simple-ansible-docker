@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
-RUN apt update && apt install python3 python3-pip nginx libmysqlclient-dev -y
-RUN pip3 install django uwsgi mysql-connector-python
+RUN apt update && apt install python3 python3-pip nginx libmysqlclient-dev python3-dev libmysqlclient-dev -y 
+RUN pip3 install django uwsgi mysql-connector-python mysqlclient
 
 COPY app /app
 
