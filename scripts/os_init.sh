@@ -4,6 +4,13 @@
 # tested on ubuntu 18.04 LTS
 # install and configure OS for ansible + docker solution
 #
+
+
+if [[ `id -u` -ne 0 ]]; then 
+    echo "Please run as root"
+    exit 1
+fi
+
 ## install required packages 
 apt update
 apt install apt-transport-https ca-certificates curl software-properties-common -y
@@ -20,5 +27,10 @@ ansible --version
 
 ## setup localhost in hosts file for ansible
 echo -e "[local]\nlocalhost ansible_connection=local" >> /etc/ansible/hosts
+## one step less for user ;] 
+chmod +x ../ansible/playbooks/deploy.yml
+## decompress init.sql which is too big for github
+gunzip ../docker/mysql/init.sql.gz
+
 
 
