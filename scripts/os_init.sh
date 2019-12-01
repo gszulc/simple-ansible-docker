@@ -11,6 +11,9 @@ if [[ `id -u` -ne 0 ]]; then
     exit 1
 fi
 
+## check if update is not ongoing
+#ps -ef | grep -i apt | grep update | awk '{print $2}' | xargs kill -9
+
 ## install required packages 
 apt update
 apt install apt-transport-https ca-certificates curl software-properties-common -y
