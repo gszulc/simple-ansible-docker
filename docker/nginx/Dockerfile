@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+LABEL maintainer="gszulc@gmx.com"
+
 RUN apt update && apt install python3 python3-pip nginx python3-dev libmysqlclient-dev libssl-dev -y 
 RUN pip3 install django uwsgi mysql-connector-python mysqlclient
 
@@ -14,6 +16,10 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 
 STOPSIGNAL SIGTERM
 
-EXPOSE 80
+EXPOSE 8000
 
-CMD ["nginx", "-g", "daemon off;"]
+ADD start.sh /
+RUN chmod +x /start.sh
+
+CMD ["/start.sh"]
+

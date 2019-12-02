@@ -1,5 +1,6 @@
 
 FROM mysql
+LABEL maintainer="gszulc@gmx.com"
 
 ENV MYSQL_ROOT_PASSWORD="simplepassword"
 
