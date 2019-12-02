@@ -76,4 +76,3 @@ class Titles(models.Model):
         managed = False
         db_table = 'titles'
         unique_together = (('emp_no', 'title', 'from_date'),)
-
