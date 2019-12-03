@@ -25,6 +25,8 @@ add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu
 apt update
 apt install ansible docker-ce python-pip -y
 pip install docker
+#rm -rf /var/lib/docker
+#systemctl restart docker.service
 
 ## verification
 docker version
