@@ -54,7 +54,9 @@ localhost:8000/mysqlapp
 ## what have been used
 * docker image with mysql
 * docker image with nginx, django and uwsgi
-    * django connects to the mysql inside private network, so I could use definder earlier image name as a hostname (no sockets for now)
+* ansible to build and run docker images
+* django to run sql query and render output as html (using django-tables2)
+* uwsgi - run the application, feed it requests from web clients (such as browsers) and return responses
 
 -----
 ## todo
