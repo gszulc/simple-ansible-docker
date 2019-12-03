@@ -12,7 +12,7 @@ if [[ `id -u` -ne 0 ]]; then
 fi
 
 ## check if update is not ongoing
-ps -ef | grep -i apt | grep update | awk '{print $2}' | xargs kill -9
+ps -ef | grep -i apt | grep update | awk '{print $2}' | xargs kill -9 2>/dev/null
 rm /var/lib/dpkg/lock
 rm /var/lib/dpkg/lock-frontend
 

@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 LABEL maintainer="gszulc@gmx.com"
 
 RUN apt update && apt install python3 python3-pip nginx python3-dev libmysqlclient-dev libssl-dev -y 
-RUN pip3 install django uwsgi mysql-connector-python mysqlclient
+RUN pip3 install django uwsgi mysql-connector-python mysqlclient django-tables2
 
 COPY app /app
 
