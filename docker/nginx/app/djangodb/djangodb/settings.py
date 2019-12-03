@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mysqlapp',
     'djangodb',
-    'django-tables2',
+    'django_tables2',
 ]
 
 MIDDLEWARE = [
